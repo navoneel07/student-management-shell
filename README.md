@@ -5,12 +5,12 @@ A student management system for the student body of HKU written in C++11, made f
 
 **Abstract**
 HKU has a large body of students, both current and previous. It is quite imperative to have a system to effectively and efficiently manage all students so as have relevant and accurate student data at hand. This project aims to create such an information and management system using C++11. A basic student member would have data associated such as:
-    UID [Primary key]
-    Name
-    Year
-    Faculty
-    Curriculum
-    Status [Fulltime/ Exchange] --> if exchange, then Home Institution
+- UID [Primary key]
+- Name
+- Year
+- Faculty
+- Curriculum
+- Status [Fulltime/ Exchange] --> if exchange, then Home Institution
 
 Upon running a query on a particular student, Further data is shown divided into:
 - **Academic**
@@ -30,5 +30,11 @@ Basic **features** of the system include:
 - Search for a specific student.
 - Modify student record, including approval of courses, posting of grades, calculating new GPA etc.
 - Delete/transfer a student depending upon the situation: delete when drop-out and transfer when pass out from the current to alumni database.
+- Use linear regression modelling to forecast expected GPA
+
+The forecasting model:
+-------------------------------------------------
+##Under Construction##
+-------------------------------------------------
 
 For alumni, it’s more or less the same, except GPA is unmodifiable, and new fields like year of graduation etc will be available.
