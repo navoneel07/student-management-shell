@@ -1,2 +1,4 @@
-# ENGG1340-Project
-A project created for our CS2 Class
+#StudentManage
+##A Project for CSII
+
+A student management system fo the student body of HKU written in C++.
