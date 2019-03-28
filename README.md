@@ -32,9 +32,4 @@ Basic **features** of the system include:
 - Modify student record, including approval of courses, posting of grades, calculating new GPA etc.
 - Delete/transfer a student depending upon the situation: delete when drop-out and transfer when pass out from the current to alumni database.
 
-The forecasting model:
--------------------------------------------------
-##Under Construction##
--------------------------------------------------
-
 For alumni, it’s more or less the same, except GPA is unmodifiable, and new fields like year of graduation etc will be available.
