@@ -17,7 +17,7 @@ Upon running a query on a particular student, Further data is shown divided into
 - Academic
   - Show all courses past and current
   - Show courses pending for approval
-  - Give GPA for previous semester, Current expected GPA bases on linear regression and current CGPA
+  - Give GPA for previous semester and current CGPA
   - Show total credits accumulated
 
 - Financial
@@ -31,7 +31,6 @@ Basic **features** of the system include:
 - Search for a specific student.
 - Modify student record, including approval of courses, posting of grades, calculating new GPA etc.
 - Delete/transfer a student depending upon the situation: delete when drop-out and transfer when pass out from the current to alumni database.
-- Use linear regression modelling to forecast expected GPA
 
 The forecasting model:
 -------------------------------------------------
