@@ -4,6 +4,7 @@
 A student management system for the student body of HKU written in C++11, made for the course ENGG1340.
 
 **Abstract**
+
 HKU has a large body of students, both current and previous. It is quite imperative to have a system to effectively and efficiently manage all students so as have relevant and accurate student data at hand. This project aims to create such an information and management system using C++11. A basic student member would have data associated such as:
 - UID [Primary key]
 - Name
