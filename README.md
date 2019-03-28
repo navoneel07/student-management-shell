@@ -13,15 +13,15 @@ HKU has a large body of students, both current and previous. It is quite imperat
 - Status [Fulltime/ Exchange] --> if exchange, then Home Institution
 
 Upon running a query on a particular student, Further data is shown divided into:
-- **Academic**
- - Show all courses past and current
- - Show courses pending for approval
- - Give GPA for previous semester, Current expected GPA bases on linear regression and current CGPA
- - Show total credits accumulated
+- Academic
+  - Show all courses past and current
+  - Show courses pending for approval
+  - Give GPA for previous semester, Current expected GPA bases on linear regression and current CGPA
+  - Show total credits accumulated
 
-- **Financial**
- - Show due payments - the amount, due date and overdue, **if any**
- - Show past payments
+- Financial
+  - Show due payments - the amount, due date and overdue, **if any**
+  - Show past payments
 
 Basic **features** of the system include:
 - Add a new student (upon admission)
