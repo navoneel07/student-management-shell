@@ -63,5 +63,5 @@ The skeletal fields for the alumni system remains the same. However we introduce
 
 This will be mostly text based due to the absence of a feasible graphics library. However, every measure will be taken to make it as user friendly as possible.
 
-##We hope you enjoy using the system as much as we enjoyed in creating it.
-#Thank you!
+## We hope you enjoy using the system as much as we enjoyed in creating it.
+# Thank you!
