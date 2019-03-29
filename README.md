@@ -52,6 +52,7 @@ The skeletal fields for the alumni system remains the same. However we introduce
 - Residence status will be removed
 
 **Programming overview**
+
   - C++ STL will be used for handling data structures like vectors, stacks and queues.
   - File handling will be used extensively for storing, modifying and adding data.
   - Searching algorithm implemented: Binary search, due to O(log n) time complexity.
