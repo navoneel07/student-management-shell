@@ -55,7 +55,7 @@ The skeletal fields for the alumni system remains the same. However we introduce
 
   - C++ STL will be used for handling data structures like vectors, stacks and queues.
   - File handling will be used extensively for storing, modifying and adding data.
-  - Searching algorithm implemented: Binary search, due to O(log n) time complexity.
+  - Searching algorithm implemented: Hash Map retrieval. O(1) time on average.
   - Sorting algorithm: Merge sort, due to the large number of records. Time complexity: O(nlogn).
   - The program will be divided into various header and C++ files for each of the functionalities.
   - Each student record would be a class.

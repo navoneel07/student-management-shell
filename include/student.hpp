@@ -8,7 +8,7 @@ member functions such as Add etc.
 using namespace std;
 
 class Student{
-    unsigned int uid;           //10-digit UID
+    string uid;           //10-digit UID
     string name;                //Name of student
     int year;                   //Year of study
     string faculty;             //Faculty of study
@@ -19,4 +19,8 @@ class Student{
 
 public:
     void newStudent();          //function for adding a new student
+    void viewStudent();
+    string getUID(){
+        return uid;
+    }
 };

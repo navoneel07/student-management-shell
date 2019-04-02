@@ -24,3 +24,8 @@ void Student::newStudent(){
     cout<<"Residential status: ";
     getline(cin, res_status);
 }
+
+void Student::viewStudent(){
+    cout<<endl;
+    cout<<"UID: "<<uid<<"\nName: "<<name<<"\nYear: "<<year<<"\nFaculty: "<<faculty<<"\nCurriculum: "<<curriculum<<"\nStatus of Study: "<<status<<"\nNationality: "<<nationality<<"\nResidential Status: "<<res_status<<"\n";
+}
