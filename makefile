@@ -4,6 +4,7 @@ student.o: include/student.hpp src/student.cpp
 file_functions.o: include/file_functions.hpp include/student.hpp src/file_functions.cpp
 	g++ -c src/file_functions.cpp
 
+
 database_functions.o: include/student.hpp include/database_functions.hpp include/file_functions.hpp src/database_functions.cpp
 	g++ -c src/database_functions.cpp
 

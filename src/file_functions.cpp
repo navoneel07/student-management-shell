@@ -8,6 +8,12 @@
 
 using namespace std;
 
+void clearKeys(){
+    ofstream ofile;
+    ofile.open("db/key.txt", ios::trunc);
+    ofile.close();
+}
+
 void mapInit(unordered_map<string, string> &studentMap){
     ifstream kfile;
     kfile.open("db/key.txt");
