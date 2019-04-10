@@ -8,6 +8,6 @@ using namespace std;
 int main(int argc, char const *argv[]) {
     unordered_map<string, string> studentMap;
     mapInit(studentMap);
-    searchStudent(studentMap);
+    filterStudent(studentMap);
     return 0;
 }
