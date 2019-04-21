@@ -97,7 +97,7 @@ void removeLine(string uid){
     if(flag == 0){
         cout<<"No matches found...";
         exit(0);
-    }else{cout<<"Student removed!\n";}
+    }else{cout<<"Student has been removed!\n";}
     remove("db/key.txt");
     rename("db/temp.txt", "db/key.txt");
 
