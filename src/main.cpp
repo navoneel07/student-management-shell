@@ -7,7 +7,14 @@ using namespace std;
 
 int main(int argc, char const *argv[]) {
     unordered_map<string, string> studentMap;
-    mapInit(studentMap);
-    filterStudent(studentMap);
+    unordered_map<string, string> courseMap;
+
+    cout<<"Welcome to the qLang shell";
+
+    while(true){
+        mapInit(studentMap, "db/key.txt");
+        mapInit(courseMap, "data/course_codes.txt");
+        commandLineMode(studentMap, courseMap);
+    }
     return 0;
 }

@@ -5,7 +5,8 @@ member functions such as Add etc.
 
 #pragma once
 #include <string>
-
+#include <unordered_map>
+#include <array>
 using namespace std;
 
 class Student{
@@ -21,8 +22,17 @@ class Student{
 public:
     void newStudent();          //function for adding a new student
     void viewStudent();
-    string getUID(){
-        return uid;
-    }
+    string getUID(){return uid;}
     string getData(string);
+    void setData(string, string);
+};
+
+class StudentAcademic : protected Student{
+    array<string,6> cur_courses;
+    array<string,42> past_courses;
+    int total_credits;
+
+public:
+    void newStudentAcademic();
+    void viewStudentAcademic(unordered_map<string, string>);
 };

@@ -34,7 +34,7 @@ Upon running a query on a particular student, Further data is shown divided into
 Basic **features** of the system include:
 - Add new students (upon admission)
 - Show all students
-- Sort by criteria and filter out specific students according to a criteria [implement a simple query language and it'stokenizer and parser -----> see S4]
+- Sort by criteria and filter out specific students according to a criteria [implement a simple query language and it's tokenizer and parser -----> see S4]
 - Search for a specific student.
 - Modify student record, including approval of courses, posting of grades, calculating new GPA etc.
 - Approval of course system based on student's historical course data.
