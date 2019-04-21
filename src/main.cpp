@@ -9,7 +9,7 @@ int main(int argc, char const *argv[]) {
     unordered_map<string, string> studentMap;
     unordered_map<string, string> courseMap;
 
-    cout<<"Welcome to the qLang shell";
+    cout<<"Welcome to the qLang shell!";
 
     while(true){
         mapInit(studentMap, "db/key.txt");
