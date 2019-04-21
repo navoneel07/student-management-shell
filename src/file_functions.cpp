@@ -95,7 +95,7 @@ void removeLine(string uid){
         ofile<<line<<endl;
     }
     if(flag == 0){
-        cout<<"No such student exists...";
+        cout<<"No matches found...";
         exit(0);
     }else{cout<<"Student removed!\n";}
     remove("db/key.txt");
