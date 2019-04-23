@@ -57,6 +57,8 @@ The skeletal fields for the alumni system remains the same. However we introduce
   - Sorting algorithm: Merge sort, due to the large number of records. Time complexity: O(nlogn).
   - The program will be divided into various header and C++ files for each of the functionalities.
   - Each student record would be a class.
+  - Dynamic memory has been used to make a linked list which has been used to create a custom stack class.
+  - C++ templates have been used in the implementation of the stack class.
 
 **S4. The QLang**
 

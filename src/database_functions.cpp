@@ -2,7 +2,6 @@
 #include <iomanip>
 #include <unordered_map>
 #include <vector>
-#include <stack>
 #include <sstream>
 #include "../include/file_functions.hpp"
 #include "../include/database_functions.hpp"

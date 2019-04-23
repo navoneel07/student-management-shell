@@ -4,9 +4,38 @@
 #include "../include/student.hpp"
 #include<iostream>
 #include<sstream>
-#include<stack>
-
 using namespace std;
+
+template <typename T>
+class Stack{
+    struct Node{
+        T data;
+        Node* next;
+    };
+    Node* head;
+public:
+    Stack(){
+        head = nullptr;
+    }
+    bool empty(){return head == nullptr;}
+    void push(T val){
+        Node* temp = new Node;
+        temp->data = val;
+        temp->next = nullptr;
+        if(head!=nullptr){
+            temp->next = head;
+        }
+        head = temp;
+    };
+    void pop(){
+        Node* temp;
+        temp = head;
+        head = head->next;
+        delete temp;
+    };
+    T top(){return head-> data;}
+};
+
 
 vector<string> tokenizer(string command){
     vector<string> statement;
@@ -46,8 +75,8 @@ bool booleanEvaluate(bool val1, bool val2, string op){
 }
 
 bool commandEvaluate(vector<string> expressions, Student student){
-    stack <bool> values;
-    stack <string> ops;
+    Stack<bool> values;
+    Stack<string> ops;
     for (auto expression : expressions) {
         if(isalpha(expression[0])){
             values.push(expressionEvaluate(expression, student));
