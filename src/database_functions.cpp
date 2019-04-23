@@ -136,7 +136,7 @@ void modify(unordered_map<string, string> studentMap, string command){
     value = commandTokens[1].substr(commandTokens[1].find('=') + 1, commandTokens[1].length()-1-commandTokens[1].find('='));
     student.setData(field, value);
     modifyFile(student, studentMap);
-    cout<<"Student data modified!";
+    cout<<"Student data modified!\n";
 }
 
 void commandLineMode(unordered_map<string, string> studentMap, unordered_map<string, string> courseMap){
