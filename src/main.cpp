@@ -10,13 +10,14 @@
     #define CLEAR "clear"
 #endif
 
-#define EXIT 10
+#define EXIT 12
 
 using namespace std;
 
 int main(int argc, char const *argv[]) {
     unordered_map<string, string> studentMap;
     unordered_map<string, string> courseMap;
+    unordered_map<string, string> alumMap;
     cout<<"Welcome! To the student manage system\n\nChoose the following actions: \n\n";
     displayMenu();
     int choice;
@@ -25,6 +26,7 @@ int main(int argc, char const *argv[]) {
     while(true){
         mapInit(studentMap, "db/key.txt");
         mapInit(courseMap, "data/course_codes.txt");
+        mapInit(alumMap, "db/key_al.txt");
         if (choice == 1) {
             addNewStudentToDatabase();
         }
@@ -71,6 +73,15 @@ int main(int argc, char const *argv[]) {
             filterStudent(studentMap, cmd);
         }
         else if(choice == 8){
+          string uid;
+          cout<<"Enter UID of student to transfer to alumni database: ";
+          cin>>uid;
+          transfer(uid, studentMap);
+        }
+        else if(choice == 9){
+          viewAlumTable(alumMap);
+        }
+        else if(choice == 10){
             system(CLEAR);
             cin.ignore(256, '\n');
             cout<<"Welcome to the qLang shell!";
@@ -78,7 +89,7 @@ int main(int argc, char const *argv[]) {
                 commandLineMode(studentMap, courseMap);
             }
         }
-        else if(choice == 9){
+        else if(choice == 11){
             cout<<"Help is under construction! Please check back later...\n";
         }
         else if(choice == EXIT){

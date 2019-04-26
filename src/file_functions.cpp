@@ -32,20 +32,24 @@ void mapInit(unordered_map<string, string> &genericMap, string filename){
     kfile.close();
 }
 
-void writeStudentToFile(Student student, StudentAcademic s_a){
-    ofstream ofile, kfile, afile;
+void writeStudentToFile(Student student, StudentAcademic s_a, StudentFinance s_f){
+    ofstream ofile, kfile, afile, ffile;
     string new_student_file = "db/"+student.getUID()+".txt";
     string new_student_afile = "db/"+student.getUID()+"_a.txt";
+    string new_student_ffile = "db/"+student.getUID()+"_f.txt";
+
     ofile.open(new_student_file.c_str(), ios::app | ios::binary);
     afile.open(new_student_afile.c_str(), ios::app | ios::binary);
+    ffile.open(new_student_ffile.c_str(), ios::app|ios::binary);
     kfile.open("db/key.txt", ios::app);
 
     ofile.write((char*)&student, sizeof(student));
     afile.write((char*) &s_a, sizeof(s_a));
-
+    ffile.write((char*) &s_f, sizeof(s_f));
     kfile<<student.getUID()<<' '<<new_student_file<<'\n';
     cout<<"New Student Added!";
 
+    ffile.close();
     afile.close();
     ofile.close();
     kfile.close();
@@ -77,6 +81,22 @@ StudentAcademic readAcademicFromFile(string filename){
     return student_a;
 }
 
+StudentFinance readFinanceFromFile(string filename){
+  ifstream ifile;
+  StudentFinance student_f;
+  ifile.open(filename.c_str());
+  ifile.read((char*)&student_f, sizeof(student_f));
+  return student_f;
+}
+
+Alumni readAlumFile(string filename){
+  ifstream ifile;
+  Alumni a;
+  ifile.open(filename.c_str());
+  ifile.read((char*)&a, sizeof(a));
+  return a;
+}
+
 void removeLine(string uid){
     int flag = 0;
     ifstream ifile;
@@ -100,5 +120,32 @@ void removeLine(string uid){
     }else{cout<<"Student has been removed!\n";}
     remove("db/key.txt");
     rename("db/temp.txt", "db/key.txt");
+}
 
+void convert_to_alumni_file(string uid, Alumni a){
+  ofstream temp;
+  ifstream ifile;
+  string fil = "db/"+uid+".txt";
+  temp.open("db/temp.txt", ios::app | ios::binary);
+  ifile.open(fil.c_str());
+  temp.write((char*) &a, sizeof(a));
+  remove(fil.c_str());
+  rename("db/temp.txt", fil.c_str());
+}
+
+void transfer_key(string uid){
+  ofstream akfile;
+  ifstream skfile;
+  skfile.open("db/key.txt");
+  akfile.open("db/key_al.txt", ios::app);
+  string line;
+  while(getline(skfile, line)){
+    istringstream inpstr(line);
+    string word;
+    inpstr>>word;
+    if(word == uid){
+      akfile<<line<<endl;
+      removeLine(uid);
+    }
+  }
 }

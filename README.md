@@ -12,7 +12,7 @@ HKU has a large body of students, both current and previous. It is quite imperat
 - Year
 - Faculty
 - Curriculum
-- Status [Fulltime/ Exchange] --> if exchange, then Home Institution
+- Status [Fulltime/ Exchange] 
 - Nationality
 - Residence status: University housing / Non-University housing
 
@@ -38,7 +38,6 @@ Basic **features** of the system include:
 - Modify student record, including approval of courses, posting of grades, calculating new GPA etc.
 - Approval of course system based on student's historical course data.
 - Delete/transfer a student depending upon the situation: delete when drop-out and transfer when pass out from the current to alumni database.
-- Have a merit and nationality based scholarship consideration system.
 
 **S2. Alumni system**
 

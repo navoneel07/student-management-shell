@@ -36,3 +36,44 @@ public:
     void newStudentAcademic();
     void viewStudentAcademic(unordered_map<string, string>);
 };
+
+class StudentFinance{
+  array<string, 8> past_payments;
+  string current_due, due_date;
+public:
+  void newStudentFinance();
+  void viewStudentFinance();
+};
+
+class Alumni{
+  string uid;
+  string name;
+  string year_of_grad;
+  string faculty;
+  string curriculum;
+  string grad_classification;
+  string final_cgpa;
+public:
+  void setUID(string u){
+    uid = u;
+  }
+  void setName(string n){
+    name = n;
+  }
+  void setGrad(string g){
+    year_of_grad = g;
+  }
+  void setFac(string f){
+    faculty = f;
+  }
+  void setCur(string c){
+    curriculum = c;
+  }
+  void setGradClass(string gc){
+    grad_classification = gc;
+  }
+  void setFinCGPA(string cgpa){
+    final_cgpa = cgpa;
+  }
+  void viewAlumni();
+};

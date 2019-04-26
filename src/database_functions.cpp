@@ -24,6 +24,17 @@ void tableHeader(){
     cout<<"---------------------------------------------------------------------------------------------------------------"<<endl;
 }
 
+void alumniTableHeader(){
+  cout<<left<<setw(14)<<"UID"
+  <<left<<setw(20)<<"NAME"
+  <<left<<setw(12)<<"FACULTY"
+  <<left<<setw(14)<<"CURRICULUM"
+  <<left<<setw(18)<<"YEAR OF GRAD"
+  <<left<<setw(18)<<"CLASSIFICATION"
+  <<left<<setw(12)<<"FINAL CGPA"<<endl;
+  cout<<"---------------------------------------------------------------------------------------------------------------"<<endl;
+}
+
 void viewTable(unordered_map<string, string> studentMap){
     tableHeader();
     for(auto &s : studentMap){
@@ -32,12 +43,22 @@ void viewTable(unordered_map<string, string> studentMap){
     }
 }
 
+void viewAlumTable(unordered_map<string, string> alumMap){
+  alumniTableHeader();
+  for(auto &a : alumMap){
+      Alumni alum = readAlumFile(a.second);
+      alum.viewAlumni();
+  }
+}
+
 void addNewStudentToDatabase(){
     Student student;
     StudentAcademic student_a;
+    StudentFinance student_f;
     student.newStudent();
     student_a.newStudentAcademic();
-    writeStudentToFile(student, student_a);
+    student_f.newStudentFinance();
+    writeStudentToFile(student, student_a, student_f);
     cout<<"\nNew student added!\n";
 }
 
@@ -48,15 +69,17 @@ void searchStudent(unordered_map<string, string> studentMap, unordered_map<strin
             tableHeader();
             student.viewStudent();
             StudentAcademic s_a = readAcademicFromFile("db/"+student.getUID()+"_a.txt");
-            cout<<"\nView academic record of student? (Y/N): ";
+            StudentFinance s_f = readFinanceFromFile("db/"+student.getUID()+"_f.txt");
+            cout<<"\nExpand the student? (Y/N): ";
             char ch;
             cin>>ch;
             switch(ch){
                 case 'Y': s_a.viewStudentAcademic(courseMap);
+                          s_f.viewStudentFinance();
                           break;
-                case 'N': cout<<"Fuck you man!";
+                case 'N':
                           break;
-                default: cout<<"Type karna aata h?";
+                default: cout<<"Invalid Choice!";
                           break;
             }
             return;
@@ -169,4 +192,33 @@ void commandLineMode(unordered_map<string, string> studentMap, unordered_map<str
     else{
         cout<<"Command not found!\n";
     }
+}
+
+Alumni convert_to_alumni(Student s){
+  string temp;
+  Alumni a;
+  a.setUID(s.getData("uid"));
+  a.setName(s.getData("name"));
+  cout<<"\nEnter year of graduation: ";
+  cin>>temp;
+  a.setGrad(temp);
+  a.setFac(s.getData("faculty"));
+  a.setCur(s.getData("curriculum"));
+  cin.ignore(256, '\n');
+  cout<<"\nEnter Graduation Classification: ";
+  getline(cin, temp);
+  a.setGradClass(temp);
+  cout<<"\nEnter Final CGPA: ";
+  cin>>temp;
+  a.setFinCGPA(temp);
+  return a;
+}
+void transfer(string uid, unordered_map<string, string> studentMap){
+  string fil = "db/"+uid+".txt";
+  Student s = readStudentFromFile(fil.c_str());
+  Alumni a = convert_to_alumni(s);
+  convert_to_alumni_file(uid, a);
+  transfer_key(uid);
+  mapInit(studentMap, "db/key.txt");
+  cout<<"Student transferred!";
 }

@@ -139,3 +139,45 @@ void StudentAcademic::viewStudentAcademic(unordered_map<string, string> courseMa
     }
     cout<<"\nTotal credits accumulated = "<<total_credits<<"\n\n";
 }
+
+void StudentFinance::newStudentFinance(){
+  int num_of_past;
+  cout<<"\nFinancial\nEnter number of past payments: ";
+  cin>>num_of_past;
+  for (int i = 0; i < num_of_past; i++) {
+    cout<<"Enter amount paid for past payment in semester "<<i+1<<" : ";
+    cin>>past_payments[i];
+  }
+  for (int i = num_of_past; i < past_payments.size(); i++) {
+    past_payments[i] = "0";
+  }
+  cout<<"Enter current amount due: ";
+  cin>>current_due;
+  cout<<"Enter due date for payment: ";
+  cin>>due_date;
+}
+
+void StudentFinance::viewStudentFinance(){
+  cout<<"\n=======================\nFinancial information\n=======================\n";
+  cout<<"Past payments\n";
+  cout<<left<<setw(16)<<"Semester"
+  <<left<<setw(16)<<"Amount"<<endl;
+  for (int i = 0; i < past_payments.size(); i++) {
+    if (past_payments[i] == "0") {
+      continue;
+    }
+    cout<<left<<setw(16)<<"Semester "+to_string(i+1)
+    <<left<<setw(16)<<past_payments[i]<<endl;
+  }
+  cout<<"Present Due: "<<current_due<<"HKD\nDue Date: "<<due_date<<endl;
+}
+
+void Alumni::viewAlumni(){
+  cout<<left<<setw(14)<<uid
+  <<left<<setw(20)<<name
+  <<left<<setw(12)<<faculty
+  <<left<<setw(14)<<curriculum
+  <<left<<setw(18)<<year_of_grad
+  <<left<<setw(18)<<grad_classification
+  <<left<<setw(12)<<final_cgpa<<'\n';
+}
