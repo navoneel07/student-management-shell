@@ -3,6 +3,7 @@
 #include <iomanip>
 using namespace std;
 
+//Creates new student object
 void Student::newStudent(){
     cout<<"Enter the following information: "<<endl;
     cout<<"UID: ";
@@ -25,6 +26,7 @@ void Student::newStudent(){
     getline(cin, res_status);
 }
 
+//prints data contained in student object
 void Student::viewStudent(){
     cout<<left<<setw(14)<<uid
     <<left<<setw(20)<<name
@@ -36,9 +38,10 @@ void Student::viewStudent(){
     <<left<<setw(12)<<res_status<<'\n';
 }
 
+//helper function to set data of a particular field in a student object
 void Student::setData(string field, string value){
     if(field == "uid"){
-        uid = value;
+        uid = value;//
     }
     else if(field == "name"){
         name = value;
@@ -67,6 +70,7 @@ void Student::setData(string field, string value){
     }
 }
 
+//returns data for a particular field in a student object
 string Student::getData(string field){
     if(field == "uid"){
         return uid;
@@ -98,6 +102,7 @@ string Student::getData(string field){
     }
 }
 
+//creates new student academic object
 void StudentAcademic::newStudentAcademic(){
     int a, b;
     cout<<"\nAcademic\nEnter number of current courses: ";
@@ -122,6 +127,7 @@ void StudentAcademic::newStudentAcademic(){
     total_credits = 6*b;
 }
 
+//prints student academic object
 void StudentAcademic::viewStudentAcademic(unordered_map<string, string> courseMap){
     cout<<"\n=======================\nAcademic information\n=======================\nCurrent Courses\n";
     for(int i=0;i<cur_courses.size();i++){
@@ -140,6 +146,7 @@ void StudentAcademic::viewStudentAcademic(unordered_map<string, string> courseMa
     cout<<"\nTotal credits accumulated = "<<total_credits<<"\n\n";
 }
 
+//creates new student finance object
 void StudentFinance::newStudentFinance(){
   int num_of_past;
   cout<<"\nFinancial\nEnter number of past payments: ";
@@ -157,6 +164,7 @@ void StudentFinance::newStudentFinance(){
   cin>>due_date;
 }
 
+//prints student finance object
 void StudentFinance::viewStudentFinance(){
   cout<<"\n=======================\nFinancial information\n=======================\n";
   cout<<"Past payments\n";
@@ -172,6 +180,7 @@ void StudentFinance::viewStudentFinance(){
   cout<<"Present Due: "<<current_due<<"HKD\nDue Date: "<<due_date<<endl;
 }
 
+//prints alumni object
 void Alumni::viewAlumni(){
   cout<<left<<setw(14)<<uid
   <<left<<setw(20)<<name
