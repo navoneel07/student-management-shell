@@ -171,7 +171,7 @@ void modify(unordered_map<string, string> studentMap, string command){
 }
 
 //launch command line mode
-void commandLineMode(unordered_map<string, string> studentMap, unordered_map<string, string> courseMap){
+void commandLineMode(unordered_map<string, string> studentMap, unordered_map<string, string> courseMap, unordered_map<string, string> alumMap){
     cout<<"\n>>> ";
     string cmdline;
     getline(cin, cmdline);
@@ -195,6 +195,12 @@ void commandLineMode(unordered_map<string, string> studentMap, unordered_map<str
     }
     else if(cmdline[0] == '@'){
         viewTable(studentMap);
+    }
+    else if(cmdline[0] == '#'){
+        viewAlumTable(alumMap);
+    }
+    else if(cmdline[0] == '>'){
+        transfer(cmdline.substr(2, cmdline.length()-2), studentMap);
     }
     else if(cmdline == "exit"){
         exit(0);

@@ -86,7 +86,7 @@ int main(int argc, char const *argv[]) {
             cin.ignore(256, '\n');
             cout<<"Welcome to the qLang shell!";
             while(true){
-                commandLineMode(studentMap, courseMap);
+                commandLineMode(studentMap, courseMap, alumMap);
             }
         }
         else if(choice == 11){

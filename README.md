@@ -84,6 +84,26 @@ A parsing tree is shown below:
 
 ![Parse Tree](parse.jpg)
 
+The field names which can be used in expressions are as below:
+- uid
+- name
+- year
+- faculty
+- curriculum
+- status
+- nationality
+- res_status
+
+The various operators for the commands used in the shell are:
+- + : add student
+- @ : view entire student table
+- $ [field]=[value] : search
+- ^ [field] : sort by field
+- % (command) : filter
+- * [uid] [field]=[value] : modify field of uid to value
+- ~ [uid] : delete
+- # : view alumni table
+- > [uid] : transfer student with uid to alumni database
 **Interface**
 
 This will be mostly text based due to the absence of a feasible graphics library. However, every measure will be taken to make it as user friendly as possible.
