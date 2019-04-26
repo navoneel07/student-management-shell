@@ -197,6 +197,7 @@ void commandLineMode(unordered_map<string, string> studentMap, unordered_map<str
         viewTable(studentMap);
     }
     else if(cmdline[0] == '#'){
+        mapInit(alumMap, "db/key_al.txt")
         viewAlumTable(alumMap);
     }
     else if(cmdline[0] == '>'){
