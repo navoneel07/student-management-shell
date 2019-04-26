@@ -11,7 +11,7 @@
 
 using namespace std;
 
-
+//print student table header
 void tableHeader(){
     cout<<left<<setw(14)<<"UID"
     <<left<<setw(20)<<"NAME"
@@ -24,6 +24,7 @@ void tableHeader(){
     cout<<"---------------------------------------------------------------------------------------------------------------"<<endl;
 }
 
+//print alumni table header
 void alumniTableHeader(){
   cout<<left<<setw(14)<<"UID"
   <<left<<setw(20)<<"NAME"
@@ -35,6 +36,7 @@ void alumniTableHeader(){
   cout<<"---------------------------------------------------------------------------------------------------------------"<<endl;
 }
 
+//print entire table
 void viewTable(unordered_map<string, string> studentMap){
     tableHeader();
     for(auto &s : studentMap){
@@ -43,6 +45,7 @@ void viewTable(unordered_map<string, string> studentMap){
     }
 }
 
+//print entire alumni table
 void viewAlumTable(unordered_map<string, string> alumMap){
   alumniTableHeader();
   for(auto &a : alumMap){
@@ -51,6 +54,7 @@ void viewAlumTable(unordered_map<string, string> alumMap){
   }
 }
 
+//to add new studet to database
 void addNewStudentToDatabase(){
     Student student;
     StudentAcademic student_a;
@@ -62,6 +66,7 @@ void addNewStudentToDatabase(){
     cout<<"\nNew student added!\n";
 }
 
+//search for a student in the database
 void searchStudent(unordered_map<string, string> studentMap, unordered_map<string, string> courseMap, string search_cmd) {
     for(auto &s : studentMap){
         Student student = readStudentFromFile(s.second);
@@ -88,6 +93,7 @@ void searchStudent(unordered_map<string, string> studentMap, unordered_map<strin
     cout<<"\nNo such student found!";
 }
 
+//filter students in the database
 void filterStudent(unordered_map<string, string> studentMap, string cmd){
     int flag = 0, count = 0;
     Student student;
@@ -113,11 +119,13 @@ void filterStudent(unordered_map<string, string> studentMap, string cmd){
 
 }
 
+//delete student from database
 void deleteStudent(unordered_map<string, string> &studentMap, string uid){
     removeLine(uid);
     mapInit(studentMap, "db/key.txt");
 }
 
+//sort students according to a key field
 void sort(unordered_map<string, string> studentMap, string criteria){
     vector<pair<string, string> > criteria_vector;
     Student student;
@@ -150,6 +158,7 @@ void sort(unordered_map<string, string> studentMap, string criteria){
     }
 }
 
+//modifies a student record
 void modify(unordered_map<string, string> studentMap, string command){
     vector<string> commandTokens = tokenizer(command);
     string field, value;
@@ -161,6 +170,7 @@ void modify(unordered_map<string, string> studentMap, string command){
     cout<<"Student data modified!\n";
 }
 
+//launch command line mode
 void commandLineMode(unordered_map<string, string> studentMap, unordered_map<string, string> courseMap){
     cout<<"\n>>> ";
     string cmdline;
@@ -194,6 +204,7 @@ void commandLineMode(unordered_map<string, string> studentMap, unordered_map<str
     }
 }
 
+//convert a student to alumni
 Alumni convert_to_alumni(Student s){
   string temp;
   Alumni a;
@@ -213,6 +224,8 @@ Alumni convert_to_alumni(Student s){
   a.setFinCGPA(temp);
   return a;
 }
+
+//transfer a student to the alumni database
 void transfer(string uid, unordered_map<string, string> studentMap){
   string fil = "db/"+uid+".txt";
   Student s = readStudentFromFile(fil.c_str());

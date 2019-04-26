@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//function to print out menu
 void displayMenu(){
     cout<<"1. Add new student"<<endl
     <<"2. Delete student"<<endl

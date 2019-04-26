@@ -8,13 +8,14 @@
 
 using namespace std;
 
-//just a tester func
+//just a tester function
 void clearKeys(){
     ofstream ofile;
     ofile.open("db/key.txt", ios::trunc);
     ofile.close();
 }
 
+//initialize any map
 void mapInit(unordered_map<string, string> &genericMap, string filename){
     genericMap.clear();
     ifstream kfile;
@@ -32,6 +33,7 @@ void mapInit(unordered_map<string, string> &genericMap, string filename){
     kfile.close();
 }
 
+//write a student object to a file
 void writeStudentToFile(Student student, StudentAcademic s_a, StudentFinance s_f){
     ofstream ofile, kfile, afile, ffile;
     string new_student_file = "db/"+student.getUID()+".txt";
@@ -55,6 +57,7 @@ void writeStudentToFile(Student student, StudentAcademic s_a, StudentFinance s_f
     kfile.close();
 }
 
+//modify a student file
 void modifyFile(Student student, unordered_map<string, string> studentMap){
     ofstream ofile;
     ofile.open("db/temp.txt", ios::binary);
@@ -65,6 +68,7 @@ void modifyFile(Student student, unordered_map<string, string> studentMap){
     rename("db/temp.txt", filename.c_str());
 }
 
+//read data from a file into a student object
 Student readStudentFromFile(string fileName){
     ifstream ifile;
     Student student;
@@ -73,6 +77,7 @@ Student readStudentFromFile(string fileName){
     return student;
 }
 
+//read data from a file into a student academic object
 StudentAcademic readAcademicFromFile(string filename){
     ifstream ifile;
     StudentAcademic student_a;
@@ -81,6 +86,7 @@ StudentAcademic readAcademicFromFile(string filename){
     return student_a;
 }
 
+//read data from a file into a student finance object
 StudentFinance readFinanceFromFile(string filename){
   ifstream ifile;
   StudentFinance student_f;
@@ -89,6 +95,7 @@ StudentFinance readFinanceFromFile(string filename){
   return student_f;
 }
 
+//read data from a file into an alumni object
 Alumni readAlumFile(string filename){
   ifstream ifile;
   Alumni a;
@@ -97,6 +104,7 @@ Alumni readAlumFile(string filename){
   return a;
 }
 
+//remove a line from a file, used to delete a key record from the key file
 void removeLine(string uid){
     int flag = 0;
     ifstream ifile;
@@ -122,6 +130,7 @@ void removeLine(string uid){
     rename("db/temp.txt", "db/key.txt");
 }
 
+//convert a student file to an alumni file when transferred to the alumni database
 void convert_to_alumni_file(string uid, Alumni a){
   ofstream temp;
   ifstream ifile;
@@ -133,6 +142,7 @@ void convert_to_alumni_file(string uid, Alumni a){
   rename("db/temp.txt", fil.c_str());
 }
 
+//transfer key reference from student key file to alumni key file
 void transfer_key(string uid){
   ofstream akfile;
   ifstream skfile;

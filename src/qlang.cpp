@@ -6,6 +6,7 @@
 #include<sstream>
 using namespace std;
 
+//temolate class to create stack using linked list(using pointers)
 template <typename T>
 class Stack{
     struct Node{
@@ -36,7 +37,7 @@ public:
     T top(){return head-> data;}
 };
 
-
+//tokenizes an input string
 vector<string> tokenizer(string command){
     vector<string> statement;
     string token;
@@ -47,12 +48,14 @@ vector<string> tokenizer(string command){
     return statement;
 }
 
+//define precedence of the operators
 int precedence(string op){
     if(op == "|"){return 1;}
     else if(op == "&"){return 2;}
     return -1;
 }
 
+//evaluate an equality expression to be true or false
 bool expressionEvaluate(string expression, Student student){
     string field, value;
     value = expression.substr(expression.find('=')+1, expression.length()-expression.find('='));
@@ -68,12 +71,14 @@ bool expressionEvaluate(string expression, Student student){
     return false;
 }
 
+//evaluate boolean statements which have & and | (and and or)
 bool booleanEvaluate(bool val1, bool val2, string op){
     if(op == "&"){return val1 && val2;}
     else if(op == "|"){return val1 || val2;}
     return false;
 }
 
+//evaluate a tokenized and booleanized command using stacks to evaluate the infix expression
 bool commandEvaluate(vector<string> expressions, Student student){
     Stack<bool> values;
     Stack<string> ops;
