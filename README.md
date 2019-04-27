@@ -95,7 +95,7 @@ The field names which can be used in expressions are as below:
 The various operators for the commands used in the shell are:
 - `+` : add student
 - `@` : view entire student table
-- `$ [field]=[value]` : search
+- `$ [field]=[value]` : search (using either uid or name as field is recommended)
 - `^ [field]` : sort by field
 - `% (command)` : filter
 - `* [uid] [field]=[value]` : modify field of uid to value
