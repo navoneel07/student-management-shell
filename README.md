@@ -110,5 +110,9 @@ This will be mostly text based due to the absence of a feasible graphics library
 
 Navigate to the project folder in your terminal and type `make run`
 
+**Acknowledgements**
+- GeeksForGeeks
+- Stack Overflow
+
 ## We hope you enjoy using the system as much as we enjoyed creating it.
 # Thank you!
