@@ -106,6 +106,9 @@ The various operators for the commands used in the shell are:
 **Interface**
 
 This will be mostly text based due to the absence of a feasible graphics library. However, every measure will be taken to make it as user friendly as possible.
+**How to run**
+
+Navigate to the project folder in your terminal and type `make run`
 
 ## We hope you enjoy using the system as much as we enjoyed creating it.
 # Thank you!
