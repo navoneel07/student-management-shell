@@ -15,7 +15,8 @@ void displayMenu(){
     <<"8. Transfer student"<<endl
     <<"9. View all alumni"<<endl
     <<"10. Work in qLang shell"<<endl
-    <<"11. Help"<<endl
-    <<"12. Exit"<<endl<<endl;
+    <<"11. Grant Scholarships"<<endl
+    <<"12. Help"<<endl
+    <<"13. Exit"<<endl<<endl;
     cout<<"Input your choice: ";
 }

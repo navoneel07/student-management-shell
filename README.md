@@ -37,8 +37,8 @@ Basic **features** of the system include:
 - Show all students
 - Sort by criteria and filter out specific students according to a criteria [implement a simple query language and it's tokenizer and parser -----> see S4]
 - Search for a specific student.
-- Modify student record, including approval of courses, posting of grades, calculating new GPA etc.
-- Approval of course system based on student's historical course data.
+- Modify student record
+- Show all students eligible for scholarship
 - Delete/transfer a student depending upon the situation: delete when drop-out and transfer when pass out from the current to alumni database.
 
 **S2. Alumni system**

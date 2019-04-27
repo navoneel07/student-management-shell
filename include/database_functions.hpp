@@ -14,3 +14,4 @@ void viewAlumTable(std::unordered_map<std::string, std::string>);
 void commandLineMode(std::unordered_map<std::string, std::string>, std::unordered_map<std::string, std::string>, std::unordered_map<std::string, std::string>);
 Alumni convert_to_alumni(Student);
 void transfer(std::string, std::unordered_map<std::string, std::string>);
+void grant_scholarship(std::unordered_map<std::string, std::string>);

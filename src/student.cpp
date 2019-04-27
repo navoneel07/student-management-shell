@@ -124,6 +124,10 @@ void StudentAcademic::newStudentAcademic(){
     for (int i = b; i < 42; i++) {
         past_courses[i] = "0";
     }
+    cout<<"Enter CGPA: ";
+    string c;
+    cin>>c;
+    cgpa=c;
     total_credits = 6*b;
 }
 
@@ -143,7 +147,9 @@ void StudentAcademic::viewStudentAcademic(unordered_map<string, string> courseMa
         }
         cout<<past_courses[i]<<" "<<courseMap[past_courses[i]]<<"\n";
     }
-    cout<<"\nTotal credits accumulated = "<<total_credits<<"\n\n";
+
+    cout<<"\nCGPA = "<<cgpa<<"\nTotal credits accumulated = "<<total_credits<<"\n";
+
 }
 
 //creates new student finance object

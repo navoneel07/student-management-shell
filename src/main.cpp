@@ -10,7 +10,7 @@
     #define CLEAR "clear"
 #endif
 
-#define EXIT 12
+#define EXIT 13
 
 using namespace std;
 
@@ -90,7 +90,10 @@ int main(int argc, char const *argv[]) {
             }
         }
         else if(choice == 11){
-            cout<<"Help is under construction! Please check back later...\n";
+          grant_scholarship(studentMap);
+        }
+        else if(choice == 12){
+          cout<<"Help is under construction! Please check back later...\n";
         }
         else if(choice == EXIT){
             break;

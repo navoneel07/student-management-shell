@@ -30,11 +30,13 @@ public:
 class StudentAcademic : protected Student{
     array<string,6> cur_courses;
     array<string,42> past_courses;
+    string cgpa;
     int total_credits;
 
 public:
     void newStudentAcademic();
     void viewStudentAcademic(unordered_map<string, string>);
+    string getC(){return cgpa;}
 };
 
 class StudentFinance{

@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include <vector>
 #include <sstream>
+#include <fstream>
 #include "../include/file_functions.hpp"
 #include "../include/database_functions.hpp"
 #include "../include/student.hpp"
@@ -197,7 +198,7 @@ void commandLineMode(unordered_map<string, string> studentMap, unordered_map<str
         viewTable(studentMap);
     }
     else if(cmdline[0] == '#'){
-        mapInit(alumMap, "db/key_al.txt")
+        mapInit(alumMap, "db/key_al.txt");
         viewAlumTable(alumMap);
     }
     else if(cmdline[0] == '>'){
@@ -241,4 +242,30 @@ void transfer(string uid, unordered_map<string, string> studentMap){
   transfer_key(uid);
   mapInit(studentMap, "db/key.txt");
   cout<<"Student transferred!";
+}
+
+void grant_scholarship(unordered_map<string, string> studentMap){
+  cout<<"Following students eligible for scholarship: \n";
+  for(auto &s : studentMap){
+    Student student = readStudentFromFile(s.second);
+    string fil = "db/"+s.first+"_a.txt";
+    StudentAcademic s_a = readAcademicFromFile(fil.c_str());
+    ifstream schols;
+    schols.open("data/scholaships.txt");
+    string line;
+    while(getline(schols, line)){
+      istringstream inpstr(line);
+      string token;
+      inpstr>>token;
+      string name = token;
+      inpstr>>token;
+      string nat = token;
+      inpstr>>token;
+      string c = token;
+      if((student.getData("nationality") == nat && s_a.getC() >= c) || (nat == "Any" && s_a.getC() >= c)){
+        cout<<student.getData("name")<<"\t"<<name<<endl;
+      }
+    }
+    schols.close();
+  }
 }
