@@ -23,10 +23,8 @@ The queries will be divided into two in accordance to alumni body or current stu
 Upon running a query on a particular student, Further data is shown divided into:
 - Academic
   - Show all courses past and current
-  - Show courses pending for approval
   - Give GPA for previous semester and current CGPA
   - Show total credits accumulated
-  - Attendance for courses which take attendance
 
 - Financial
   - Show due payments - the amount, due date and overdue, **if any**
@@ -55,7 +53,7 @@ The skeletal fields for the alumni system remains the same. However we introduce
   - C++ STL will be used for handling data structures like vectors, stacks and queues.
   - File handling will be used extensively for storing, modifying and adding data.
   - Searching algorithm implemented: Hash Map retrieval. O(1) time on average.
-  - Sorting algorithm: Merge sort, due to the large number of records. Time complexity: O(nlogn).
+  - Sorting algorithm: Bubble sort, Time complexity: O(n^2).
   - The program will be divided into various header and C++ files for each of the functionalities.
   - Each student record would be a class.
   - Dynamic memory has been used to make a linked list which has been used to create a custom stack class.
